@@ -1,0 +1,32 @@
+case_id,symptom,topology_note,concept_tag,severity,show_outputs,expected_fault
+NET-001,PC1 cannot reach Server1 in VLAN 30,Router R1 to switch SW1 VLAN 30,Router-on-a-stick,high,"GigabitEthernet0/0.30 is up, line protocol is up
+GigabitEthernet0/0.30 is administratively down, line protocol is down",GigabitEthernet0/0.30 is administratively down
+NET-002,PC cannot ping gateway,PC1 to SW1 access port,Interface status,high,"FastEthernet0/1 is administratively down, line protocol is down",Access interface shutdown
+NET-003,Inter-switch hosts isolated,SW1 trunk to SW2,VLAN mismatch,high,"%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered",Native VLAN mismatch
+NET-004,VLAN 40 clients disconnected,SW1 access VLAN 40,Missing VLAN,high,"% VLAN 40 does not exist",VLAN missing
+NET-005,Trunk carries no user VLANs,SW1 to SW2 trunk,Trunking,high,"Operational mode is not trunk",Trunk mode missing
+NET-006,Subinterface cannot route,R1 G0/0.20,Encapsulation,high,"encapsulation dot1Q mismatch",Incorrect dot1Q encapsulation
+NET-007,Two PCs lose connectivity,LAN addressing,IP addressing,medium,"%IP-4-DUPADDR: Duplicate address",Duplicate IP address
+NET-008,Host cannot reach remote subnet,PC to R1,Subnetting,medium,"Invalid mask /27 for address",Incorrect subnet mask
+NET-009,Web server unreachable,PC gateway,Default gateway,high,"Default gateway 192.168.2.1 is in wrong subnet",Incorrect default gateway
+NET-010,Branch network unreachable,R1 to R2,Routing,high,"Network 10.20.0.0 not in routing table",Missing route
+NET-011,HTTP blocked between VLANs,R1 ACL,ACL,high,"access-list 101 deny tcp 10.1.10.0 0.0.0.255 host 10.1.20.10 eq 80",ACL deny
+NET-012,Clients get APIPA addresses,SW1 DHCP relay,DHCP,high,"DHCP failed: no DHCP offers received",DHCP scope or relay issue
+NET-013,Names do not resolve,PC DNS server,DNS,medium,"DNS name lookup failed: unknown host",DNS resolution failure
+NET-014,Serial link unusable,R1 to R2 serial,Line protocol,high,"Serial0/0/0 is up, line protocol is down",Clocking or encapsulation issue
+NET-015,Access port disabled,PC to SW1,Port security,medium,"FastEthernet0/12 is administratively down, line protocol is down",Port shutdown
+NET-016,Voice VLAN phones fail,SW1 phone port,Voice VLAN,medium,"VLAN 150 not found",Voice VLAN missing
+NET-017,Management SVI unreachable,SW1 VLAN 99,SVI,medium,"Vlan99 is administratively down, line protocol is down",SVI shutdown
+NET-018,Native VLAN alerts,SW1 SW2,Trunking,medium,"native vlan mismatch",Native VLAN inconsistent
+NET-019,Guest VLAN missing,SW1,VLAN,medium,"% VLAN 70 does not exist",Guest VLAN absent
+NET-020,Internet route missing,R1 edge,Routing,high,"Default route not in routing table",Default route missing
+NET-021,SSH denied,R1 ACL,ACL,high,"ACL deny tcp host 10.0.0.5 host 10.0.1.1 eq 22",ACL blocks SSH
+NET-022,Subnet overlap error,R1 interfaces,IP addressing,high,"% 192.168.1.0 overlaps with GigabitEthernet0/1",Overlapping subnets
+NET-023,Lab switch trunk inactive,SW1 uplink,Trunking,high,"trunking is not operational",Trunk inactive
+NET-024,Subinterface sees no traffic,R1 G0/1.50,Encapsulation,high,"encapsulation is not configured",Missing encapsulation
+NET-025,Campus link disabled,SW1 to core,Interface status,high,"GigabitEthernet1/0/1 is administratively down, line protocol is down",Uplink shutdown
+NET-026,DHCP address unavailable,Server DHCP,DHCP,medium,"DHCP failed no address available",Exhausted DHCP pool
+NET-027,DNS server unreachable,PC DNS,DNS,medium,"DNS unreachable",DNS route or address issue
+NET-028,Remote VLAN blocked,R1 ACL,ACL,high,"denied by access-list 110",ACL deny
+NET-029,Wrong access VLAN,PC to SW1,VLAN mismatch,medium,"inconsistent VLAN configured on interface",Access VLAN mismatch
+NET-030,Unknown intermittent loss,Multi-device lab,General,low,"Interface counters increment but no known fault signature",Requires further diagnosis

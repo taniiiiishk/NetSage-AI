@@ -1,0 +1,9 @@
+{
+  "confidence_threshold": 0.7,
+  "llm_enabled": true,
+  "mock_mode": true,
+  "model_name": "gpt-4o-mini",
+  "human_approval_required": true,
+  "simulation_mode": true,
+  "audit_logging": true
+}
