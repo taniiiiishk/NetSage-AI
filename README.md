@@ -180,3 +180,4 @@ Test coverage includes:
 - `tests/test_checker.py`: Validates deterministic detection of administrative down, VLAN mismatches, ACL drops, and line protocol failures.
 - `tests/test_parser.py`: Validates JSON schema integrity, pydantic field constraints, and heuristic recovery.
 - `tests/test_engine.py`: Validates end-to-end orchestration, mock LLM fallback, and the mandatory human approval gate.
+# NetSage-AI
